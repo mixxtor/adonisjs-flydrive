@@ -45,6 +45,6 @@ export async function configure(command: Configure) {
    * Add provider to rc file
    */
   await codemods.updateRcFile((rcFile) => {
-    rcFile.addProvider('adonisjs/flydrive/providers/flydrive_provider')
+    rcFile.addProvider('adonisjs-flydrive/flydrive_provider')
   })
 }

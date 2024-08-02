@@ -2,10 +2,11 @@
   exports({ to: app.configPath('flydrive.ts') })
 }}}
 import { defineConfig } from 'adonisjs-flydrive'
-import type { InferDriveProviders } from 'adonisjs-flydrive/types'
+import type { InferDriveProviders } from 'adonisjs-flydrive'
 import app from '@adonisjs/core/services/app'
+import { FSDriver } from 'flydrive/drivers/fs'
 
-export default defineConfig({
+export const driveConfig = defineConfig({
   /**
    * Name of the default service. It must be defined inside
    * the service object
@@ -23,6 +24,8 @@ export default defineConfig({
       }),
   },
 })
+
+export default driveConfig
 
 /**
  * Inferring types from the configured flydrive
