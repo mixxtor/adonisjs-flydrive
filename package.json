@@ -1,6 +1,6 @@
 {
   "name": "adonisjs-flydrive",
-  "description": "Adonisjs drive providers",
+  "description": "Integrates Flydrive with AdonisJS to provide cloud storage driver manager",
   "version": "0.1.1",
   "engines": {
     "node": ">=20.6.0"
@@ -33,9 +33,17 @@
     "prepublishOnly": "npm run build",
     "release": "release-it"
   },
-  "keywords": [],
+  "keywords": ["adonisjs", "flydrive", "cloud", "storage"],
   "author": "mixxtor",
   "license": "MIT",
+  "homepage": "https://github.com/mixxtor/adonisjs-flydrive#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mixxtor/adonisjs-flydrive.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mixxtor/adonisjs-flydrive/issues"
+  },
   "dependencies": {
     "flydrive": "^1.0.2"
   },
