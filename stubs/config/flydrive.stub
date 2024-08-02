@@ -2,7 +2,7 @@
   exports({ to: app.configPath('flydrive.ts') })
 }}}
 import { defineConfig } from 'adonisjs-flydrive'
-import type { InferDriveProviders } from 'adonisjs-flydrive'
+import type { InferDriveProviders } from 'adonisjs-flydrive/types'
 import app from '@adonisjs/core/services/app'
 import { FSDriver } from 'flydrive/drivers/fs'
 
@@ -30,6 +30,6 @@ export default driveConfig
 /**
  * Inferring types from the configured flydrive
  */
-declare module 'flydrive/types' {
+declare module 'adonisjs-flydrive/types' {
   interface DriveProviders extends InferDriveProviders<typeof driveConfig> {}
 }

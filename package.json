@@ -15,7 +15,7 @@
     ".": "./build/index.js",
     "./services/main": "./build/services/main.js",
     "./flydrive_provider": "./build/providers/flydrive_provider.js",
-    "./types": "./build/src/types.js"
+    "./types": "./build/src/types/index.js"
   },
   "scripts": {
     "clean": "del-cli build",

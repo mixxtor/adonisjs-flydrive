@@ -1,5 +1,5 @@
 /**
- * @mixxtor/adonisjs-flydrive
+ * adonisjs-flydrive
  *
  * @license MIT
  * @copyright Mixxtor <mixxtor@gmail.com>

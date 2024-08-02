@@ -1,7 +1,12 @@
+/**
+ * adonisjs-flydrive
+ *
+ * @license MIT
+ * @copyright Mixxtor <mixxtor@gmail.com>
+ */
+
 import { DriveManager } from 'flydrive'
 import type { DriveManagerOptions, DriverContract } from 'flydrive/types'
-
-export * from 'flydrive/types'
 
 /**
  * A list of known caches stores inferred from the user config

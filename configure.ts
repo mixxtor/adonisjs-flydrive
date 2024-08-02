@@ -1,5 +1,5 @@
 /**
- * @mixxtor/adonisjs-flydrive
+ * adonisjs-flydrive
  *
  * @license MIT
  * @copyright Mixxtor <mixxtor@gmail.com>
@@ -23,6 +23,11 @@ export async function configure(command: Configure) {
    * Add environment variables
    */
   await codemods.defineEnvVariables({
+    /*
+    |----------------------------------------------------------
+    | Variables for configuring AWS S3
+    |----------------------------------------------------------
+    */
     AWS_S3_KEY: '',
     AWS_S3_SECRET: '',
     AWS_S3_REGION: '',

@@ -1,3 +1,10 @@
+/**
+ * adonisjs-flydrive
+ *
+ * @license MIT
+ * @copyright Mixxtor <mixxtor@gmail.com>
+ */
+
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
