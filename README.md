@@ -1,8 +1,8 @@
 # AdonisJS Flydrive
 
-AdonisJS FlyDrive is an abstraction on top of cloud storage services, such as: Amazon S3, DigitalOcean Spaces, and Google Cloud Storage.
+**AdonisJS FlyDrive** integrates the **[Flydrive](https://github.com/flydrive-js/core)** file storage library into AdonisJS 6, providing a seamless cloud storage solution within the AdonisJS framework. This package leverages FlyDrive’s unified API to manage file storage across various cloud services and local filesystems.
 
-This package is built on top of the [Flydrive](https://github.com/flydrive-js/core) package.
+This package brings the versatility of Flydrive to AdonisJS, allowing you to manage file storage efficiently and adaptively within the AdonisJS ecosystem.
 
 ## Getting Started
 
