@@ -1,8 +1,8 @@
 {{{
   exports({ to: app.configPath('flydrive.ts') })
 }}}
-import { defineConfig } from '@mixxtor/adonisjs-flydrive'
-import type { InferDriveProviders } from '@mixxtor/adonisjs-flydrive/types'
+import { defineConfig } from 'adonisjs-flydrive'
+import type { InferDriveProviders } from 'adonisjs-flydrive/types'
 import app from '@adonisjs/core/services/app'
 
 export default defineConfig({
@@ -18,7 +18,7 @@ export default defineConfig({
   services: {
     fs: () =>
       new FSDriver({
-        location: 'storage/uploads', // new URL('../storage/uploads/', import.meta.url)
+        location: app.tmpPath(),
         visibility: 'private',
       }),
   },

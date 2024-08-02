@@ -1,17 +1,50 @@
-/*
-|--------------------------------------------------------------------------
-| Configure hook
-|--------------------------------------------------------------------------
-|
-| The configure hook is called when someone runs "node ace configure <package>"
-| command. You are free to perform any operations inside this function to
-| configure the package.
-|
-| To make things easier, you have access to the underlying "ConfigureCommand"
-| instance and you can use codemods to modify the source files.
-|
-*/
+/**
+ * @mixxtor/adonisjs-flydrive
+ *
+ * @license MIT
+ * @copyright Mixxtor <mixxtor@gmail.com>
+ */
 
-import ConfigureCommand from '@adonisjs/core/commands/configure'
+import type Configure from '@adonisjs/core/commands/configure'
+import { stubsRoot } from './stubs/main.js'
 
-export async function configure(_command: ConfigureCommand) {}
+/**
+ * Configures the package
+ */
+export async function configure(command: Configure) {
+  const codemods = await command.createCodemods()
+
+  /**
+   * Publish config file
+   */
+  await codemods.makeUsingStub(stubsRoot, 'config/flydrive.stub', {})
+
+  /**
+   * Add environment variables
+   */
+  await codemods.defineEnvVariables({
+    AWS_S3_KEY: '',
+    AWS_S3_SECRET: '',
+    AWS_S3_REGION: '',
+    AWS_S3_BUCKET: '',
+  })
+
+  /**
+   * Validate environment variables
+   */
+  await codemods.defineEnvValidations({
+    variables: {
+      AWS_S3_KEY: `Env.schema.string.optional()`,
+      AWS_S3_SECRET: 'Env.schema.string.optional()',
+      AWS_S3_REGION: 'Env.schema.string.optional()',
+      AWS_S3_BUCKET: 'Env.schema.string.optional()',
+    },
+  })
+
+  /**
+   * Add provider to rc file
+   */
+  await codemods.updateRcFile((rcFile) => {
+    rcFile.addProvider('adonisjs/flydrive/providers/flydrive_provider')
+  })
+}
