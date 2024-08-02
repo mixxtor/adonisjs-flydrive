@@ -105,5 +105,19 @@
   },
   "release-it": {
     "$schema": "https://unpkg.com/release-it/schema/release-it.json"
+  },
+  "tsup": {
+    "entry": [
+      "./index.ts",
+      "./src/types.ts",
+      "./services/main.ts",
+      "./providers/flydrive_provider.ts"
+    ],
+    "outDir": "./build",
+    "clean": true,
+    "format": "esm",
+    "dts": false,
+    "sourcemap": true,
+    "target": "esnext"
   }
 }
