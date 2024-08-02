@@ -21,7 +21,7 @@
     "clean": "del-cli build",
     "copy:templates": "copyfiles \"stubs/**/*.stub\" build",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint \"./**/*.ts\"",
+    "lint": "eslint . --report-unused-disable-directives --quiet",
     "format": "prettier --write .",
     "quick:test": "node --import=./tsnode.esm.js --enable-source-maps bin/test.ts",
     "pretest": "npm run lint",
