@@ -7,13 +7,13 @@ This package is built on top of the [Flydrive](https://github.com/flydrive-js/co
 ## Getting Started
 
 ```bash
-npm install @mixxtor/adonisjs-flydrive
+npm install adonisjs-flydrive
 ```
 
 ## Configuration
 
 ```bash
-node ace configure @mixxtor/adonisjs-flydrive
+node ace configure adonisjs-flydrive
 ```
 
 Settings can be configured in `config/flydrive.ts`
@@ -23,7 +23,7 @@ Sample config:
 ```ts
 import app from '@adonisjs/core/services/app'
 import { env } from '@adonisjs/core/build/config'
-import { defineConfig } from '@mixxtor/adonisjs-flydrive'
+import { defineConfig } from 'adonisjs-flydrive'
 import { FSDriver } from 'flydrive/drivers/fs'
 import { S3Driver } from 'flydrive/drivers/s3'
 import { GCSDriver } from 'flydrive/drivers/gcs'
@@ -66,7 +66,7 @@ See [flydrive](https://github.com/flydrive-js/core) for more information
 ## Usage
 
 ```ts
-import flydrive from '@mixxtor/adonisjs-flydrive/services/main'
+import flydrive from 'adonisjs-flydrive/services/main'
 
 const drive = flydrive.use('fs')
 await drive.put('file.txt', 'hello world')
