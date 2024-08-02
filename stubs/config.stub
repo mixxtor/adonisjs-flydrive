@@ -1,0 +1,32 @@
+{{{
+  exports({ to: app.configPath('flydrive.ts') })
+}}}
+import { defineConfig } from '@mixxtor/adonisjs-flydrive'
+import type { InferDriveProviders } from '@mixxtor/adonisjs-flydrive/types'
+import app from '@adonisjs/core/services/app'
+
+export default defineConfig({
+  /**
+   * Name of the default service. It must be defined inside
+   * the service object
+   */
+  default: 'fs',
+
+  /**
+   * A collection of services you plan to use in your application
+   */
+  services: {
+    fs: () =>
+      new FSDriver({
+        location: 'storage/uploads', // new URL('../storage/uploads/', import.meta.url)
+        visibility: 'private',
+      }),
+  },
+})
+
+/**
+ * Inferring types from the configured flydrive
+ */
+declare module 'flydrive/types' {
+  interface DriveProviders extends InferDriveProviders<typeof driveConfig> {}
+}
